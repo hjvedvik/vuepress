@@ -6,7 +6,7 @@ export default {
     <div>
       <navigation></navigation>
       <div class="container">
-        <h4 class="mb-4" v-html="$root.data.archiveTitle"></h4>
+        <h4 class="mb-4" v-html="title"></h4>
         <transition-group name="list" tag="div">
           <post-card class="list-item" v-for="post in posts" :key="post.id" :post="post"></post-card>
         </transition-group>
@@ -15,6 +15,7 @@ export default {
   `,
 
   props: {
+    title: String,
     posts: Array,
   },
 

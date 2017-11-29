@@ -18,7 +18,7 @@ add_action( 'shutdown', function () {
   get_template_part( 'templates/html' );
 } );
 
-add_action( 'vuepress/data', function ( $data ) {
+add_filter( 'vuepress/data', function ( $data ) {
   $data['title'] = wp_title( '-', false, 'right' ) . get_bloginfo( 'name' );
   $data['blogName'] = get_bloginfo( 'name' );
   $data['bodyClass'] = join( ' ', get_body_class() );
